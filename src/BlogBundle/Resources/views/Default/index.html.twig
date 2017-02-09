@@ -25,13 +25,14 @@
 				<td>{{ pers.nom }}</td>
 			</tr>
 		{% endfor %}
-
-
-		{% if nbPersonne > 2 %}
-			<label>Il y a plus de deux personnes.</label>
-		{% else %}
-			<label>Il n'y a PAS plus de deux personnes.</label>
-		{% endif %}
 	</table>
+
+	{% if nbPersonne > 2 %}
+		<label>Il y a plus de deux personnes.</label>
+	{% else %}
+		<label>Il n'y a PAS plus de deux personnes.</label>
+	{% endif %}
+
+	<a href="{{ path('page2') }}">Accéder à la deuxième page</a>
 
 {% endblock %}

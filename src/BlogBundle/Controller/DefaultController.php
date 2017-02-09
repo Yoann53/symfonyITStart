@@ -30,4 +30,12 @@ class DefaultController extends Controller
         	)
         );
     }
+
+    /**
+     * @Route("/ma_deuxieme_page", name="page2")
+     */
+    public function page2Action()
+    {
+    	return $this->render('BlogBundle:Default:page2.html.twig');
+    }
 }
