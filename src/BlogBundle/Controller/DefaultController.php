@@ -48,7 +48,5 @@ class DefaultController extends Controller
     		"personnes" => $listClients
     	));
 
-
-
     }
 }
