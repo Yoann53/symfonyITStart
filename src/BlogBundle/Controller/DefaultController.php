@@ -36,7 +36,13 @@ class DefaultController extends Controller
      */
     public function page2Action()
     {
-    	$listClients = $this->getDoctrine()->getRepository('BlogBundle:Personne')->findAll();
+    	$listClients = $this->getDoctrine()->getRepository('BlogBundle:Personne')->findBy(
+    		array(),
+    		array(
+    			'nom' => 'ASC',
+    			'prenom' => 'ASC'
+    		)
+    	);
 
     	return $this->render('BlogBundle:Default:page2.html.twig', array(
     		"personnes" => $listClients
