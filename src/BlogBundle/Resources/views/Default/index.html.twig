@@ -17,6 +17,13 @@
 			<td>{{ personnes.1.prenom }}</td>
 			<td>{{ personnes.1.nom }}</td>
 		</tr>
+		{# Boucle pour afficher l'ensemble des personnes contenu dans le tableau "personnes "#}
+		{% for pers in personnes %}
+			<tr>
+				<td>{{ pers.prenom }}</td>
+				<td>{{ pers.nom }}</td>
+			</tr>
+		{% endfor %}
 	</table>
 
 {% endblock %}
