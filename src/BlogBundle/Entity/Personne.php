@@ -15,7 +15,7 @@ class Personne
     /**
      * @var string
      */
-    private $civilite;
+    public $civilite;
 
     /**
      * @var string
