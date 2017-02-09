@@ -1,0 +1,23 @@
+BlogBundle\Entity\Visiteur:
+    type: entity
+    table: visiteur
+    id: {  }
+    fields:
+        nbVisites:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: nb_visites
+    oneToOne:
+        id:
+            targetEntity: Personne
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

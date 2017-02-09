@@ -1,0 +1,29 @@
+BlogBundle\Entity\Client:
+    type: entity
+    table: client
+    id: {  }
+    fields:
+        iban:
+            type: string
+            nullable: true
+            length: 34
+            options:
+                fixed: false
+        bic:
+            type: string
+            nullable: true
+            length: 6
+            options:
+                fixed: false
+    oneToOne:
+        id:
+            targetEntity: Personne
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

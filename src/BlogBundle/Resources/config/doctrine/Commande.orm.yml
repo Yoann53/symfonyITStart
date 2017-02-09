@@ -1,0 +1,65 @@
+BlogBundle\Entity\Commande:
+    type: entity
+    table: commande
+    indexes:
+        index_id_client:
+            columns:
+                - client_id
+        index_id_statut:
+            columns:
+                - statut_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        ref:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+        dateExpedition:
+            type: datetime
+            nullable: true
+            column: date_expedition
+        dateCmd:
+            type: datetime
+            nullable: false
+            column: date_cmd
+    manyToOne:
+        client:
+            targetEntity: Client
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                client_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        statut:
+            targetEntity: Statut
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                statut_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToMany:
+        prd:
+            targetEntity: Produit
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: com
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

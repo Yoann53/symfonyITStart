@@ -1,0 +1,54 @@
+BlogBundle\Entity\Personne:
+    type: entity
+    table: personne
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        civilite:
+            type: string
+            nullable: false
+            length: 8
+            options:
+                fixed: false
+        nom:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        dateNaissance:
+            type: date
+            nullable: true
+            column: date_naissance
+        adresse:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        codePostal:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: code_postal
+        ville:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }
