@@ -26,7 +26,7 @@ class DefaultController extends Controller
         	'BlogBundle:Default:index.html.twig', 
         	array(
         		"personnes" => array($pers1, $pers2),
-        		"nbPersonne" => 2
+        		"nbPersonne" => 3
         	)
         );
     }

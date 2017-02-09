@@ -11,6 +11,7 @@
 		</thead>
 		<tr>
 			<td>{{ personnes.0.prenom }}</td>
+			{# utilisation du filtre twig "capitalize" #}
 			<td>{{ personnes.0.nom|capitalize }}</td>
 		</tr>
 		<tr>
@@ -24,6 +25,13 @@
 				<td>{{ pers.nom }}</td>
 			</tr>
 		{% endfor %}
+
+
+		{% if nbPersonne > 2 %}
+			<label>Il y a plus de deux personnes.</label>
+		{% else %}
+			<label>Il n'y a PAS plus de deux personnes.</label>
+		{% endif %}
 	</table>
 
 {% endblock %}
