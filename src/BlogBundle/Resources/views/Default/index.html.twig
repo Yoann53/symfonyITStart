@@ -3,18 +3,19 @@
 {% block body %}
 
 	<label>Hello la compagnie !</label>
+	<label>{{ nbPersonne }}</label>
 	<table>
 		<thead>
 			<th>Prénom</th>
 			<th>Nom</th>
 		</thead>
 		<tr>
-			<td>{{ prenom }}</td>
-			<td>{{ nom }}</td>
+			<td>{{ personnes.0.prenom }}</td>
+			<td>{{ personnes.0.nom }}</td>
 		</tr>
 		<tr>
-			<td>Pascal</td>
-			<td>Le grand frère</td>
+			<td>{{ personnes.1.prenom }}</td>
+			<td>{{ personnes.1.nom }}</td>
 		</tr>
 	</table>
 

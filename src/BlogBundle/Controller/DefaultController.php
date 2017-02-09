@@ -12,11 +12,22 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-    	$data = array(
+    	$pers1 = array(
     		"nom" => "GAUCHER",
     		"prenom" => "Yoann"
     	);
 
-        return $this->render('BlogBundle:Default:index.html.twig', $data);
+    	$pers2 = array(
+    		"nom" => "DUCLOS",
+    		"prenom" => "Mathilde"
+    	);
+
+        return $this->render(
+        	'BlogBundle:Default:index.html.twig', 
+        	array(
+        		"personnes" => array($pers1, $pers2),
+        		"nbPersonne" => 2
+        	)
+        );
     }
 }
