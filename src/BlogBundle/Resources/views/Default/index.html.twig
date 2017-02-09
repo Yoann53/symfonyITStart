@@ -1,5 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
 	<label>Hello la compagnie !</label>
+	<table>
+		<thead>
+			<th>Prénom</th>
+			<th>Nom</th>
+		</thead>
+		<tr>
+			<td>{{ prenom }}</td>
+			<td>{{ nom }}</td>
+		</tr>
+		<tr>
+			<td>Pascal</td>
+			<td>Le grand frère</td>
+		</tr>
+	</table>
+
 {% endblock %}
