@@ -11,11 +11,11 @@
 		</thead>
 		<tr>
 			<td>{{ personnes.0.prenom }}</td>
-			<td>{{ personnes.0.nom }}</td>
+			<td>{{ personnes.0.nom|capitalize }}</td>
 		</tr>
 		<tr>
 			<td>{{ personnes.1.prenom }}</td>
-			<td>{{ personnes.1.nom }}</td>
+			<td>{{ personnes.1.nom|length }}</td>
 		</tr>
 		{# Boucle pour afficher l'ensemble des personnes contenu dans le tableau "personnes "#}
 		{% for pers in personnes %}
