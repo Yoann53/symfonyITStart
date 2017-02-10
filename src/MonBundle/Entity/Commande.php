@@ -57,11 +57,11 @@ class Commande
     private $statut;
 
     /**
-     * Many Groups have Many Users.
-     * @ORM\ManyToMany(targetEntity="Produit", mappedBy="commandes")
+     * One Client has Many Commandes.
+     * @ORM\OneToMany(targetEntity="CommandeProduit", mappedBy="commande")
      */
-    private $produits;
-
+    private $commandeProduits;
+    
     /**
      * Get id
      *
@@ -224,36 +224,36 @@ class Commande
     }
 
     /**
-     * Add produit
+     * Add commandeProduit
      *
-     * @param \MonBundle\Entity\Produit $produit
+     * @param \MonBundle\Entity\CommandeProduit $commandeProduit
      *
      * @return Commande
      */
-    public function addProduit(\MonBundle\Entity\Produit $produit)
+    public function addCommandeProduit(\MonBundle\Entity\CommandeProduit $commandeProduit)
     {
-        $this->produits[] = $produit;
+        $this->commandeProduits[] = $commandeProduit;
 
         return $this;
     }
 
     /**
-     * Remove produit
+     * Remove commandeProduit
      *
-     * @param \MonBundle\Entity\Produit $produit
+     * @param \MonBundle\Entity\CommandeProduit $commandeProduit
      */
-    public function removeProduit(\MonBundle\Entity\Produit $produit)
+    public function removeCommandeProduit(\MonBundle\Entity\CommandeProduit $commandeProduit)
     {
-        $this->produits->removeElement($produit);
+        $this->commandeProduits->removeElement($commandeProduit);
     }
 
     /**
-     * Get produits
+     * Get commandeProduits
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getProduits()
+    public function getCommandeProduits()
     {
-        return $this->produits;
+        return $this->commandeProduits;
     }
 }
