@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<label>Vous êtes sur ma deuxième page </label>
+
+	<table>
+		<thead>
+			<th>Id</th>
+			<th>Civilité</th>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Date de naissance</th>
+			<th>Adresse</th>
+			<th>Code Postal</th>
+			<th>Ville</th>
+		</thead>
+		{% for pers in personnes %}
+			<tr>
+				<td>{{ pers.id }}</td>
+				<td>{{ pers.civilite }}</td>
+				<td>{{ pers.nom }}</td>
+				<td>{{ pers.prenom }}</td>
+				<td>{{ pers.dateNaissance|date("d/m/Y") }}</td>
+				<td>{{ pers.adresse }}</td>
+				<td>{{ pers.codePostal }}</td>
+				<td>{{ pers.ville }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}

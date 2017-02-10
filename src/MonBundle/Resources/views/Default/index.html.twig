@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<label>Hello la compagnie !</label>
+	<label>{{ nbPersonne }}</label>
+	<table>
+		<thead>
+			<th>Prénom</th>
+			<th>Nom</th>
+		</thead>
+		<tr>
+			<td>{{ personnes.0.prenom }}</td>
+			{# utilisation du filtre twig "capitalize" #}
+			<td>{{ personnes.0.nom|capitalize }}</td>
+		</tr>
+		<tr>
+			<td>{{ personnes.1.prenom }}</td>
+			<td>{{ personnes.1.nom|length }}</td>
+		</tr>
+		{# Boucle pour afficher l'ensemble des personnes contenu dans le tableau "personnes "#}
+		{% for pers in personnes %}
+			<tr>
+				<td>{{ pers.prenom }}</td>
+				<td>{{ pers.nom }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+	{% if nbPersonne > 2 %}
+		<label>Il y a plus de deux personnes.</label>
+	{% else %}
+		<label>Il n'y a PAS plus de deux personnes.</label>
+	{% endif %}
+
+	<a href="{{ path('page2') }}">Accéder à la deuxième page</a>
+
+{% endblock %}

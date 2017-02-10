@@ -13,7 +13,7 @@ class PersonneType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('civilite')->add('nom')->add('prenom')->add('dateNaissance')->add('adresse')->add('codePostal')->add('ville')        ;
+        $builder->add('civilite')->add('nom')->add('prenom')->add('dateNaissance')->add('adresse')->add('codePostal')->add('ville');
     }
     
     /**

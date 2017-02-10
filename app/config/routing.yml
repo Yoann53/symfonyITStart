@@ -1,4 +1,9 @@
-blog:
-    resource: "@BlogBundle/Controller/"
+mon:
+    resource: "@MonBundle/Controller/"
     type:     annotation
     prefix:   /
+
+# blog:
+#     resource: "@BlogBundle/Controller/"
+#     type:     annotation
+#     prefix:   /
