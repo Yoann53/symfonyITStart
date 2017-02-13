@@ -23,7 +23,7 @@ class DefaultController extends Controller
     	);
 
         return $this->render(
-        	'BlogBundle:Default:index.html.twig', 
+        	'MonBundle:Default:index.html.twig', 
         	array(
         		"personnes" => array($pers1, $pers2),
         		"nbPersonne" => 3
@@ -36,7 +36,7 @@ class DefaultController extends Controller
      */
     public function page2Action()
     {
-    	$listClients = $this->getDoctrine()->getRepository('BlogBundle:Personne')->findBy(
+    	$listClients = $this->getDoctrine()->getRepository('MonBundle:Personne')->findBy(
     		array(),
     		array(
     			'nom' => 'ASC',
@@ -44,7 +44,7 @@ class DefaultController extends Controller
     		)
     	);
 
-    	return $this->render('BlogBundle:Default:page2.html.twig', array(
+    	return $this->render('MonBundle:Default:page2.html.twig', array(
     		"personnes" => $listClients
     	));
 
