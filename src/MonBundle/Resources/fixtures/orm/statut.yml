@@ -1,0 +1,11 @@
+MonBundle\Entity\Statut:
+    statut_1:
+        libelle: 'en préparation'
+    statut_2:
+        libelle: 'expédiée'
+    statut_3:
+        libelle: 'annulée'
+    statut_4:
+        libelle: 'retournée'
+    statut_5:
+        libelle: 'remboursée'

@@ -1,0 +1,13 @@
+# MonBundle\Entity\CommandeProduit:
+#     commande_produit_1:
+#         commande: 1
+#         produit: 1
+#         quantite: 40
+#     commande_produit_2:
+#         commande: 1
+#         produit: 2
+#         quantite: 38
+#     commande_produit_3:
+#         commande: 2
+#         produit: 3
+#         quantite: 12

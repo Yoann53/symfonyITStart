@@ -17,7 +17,7 @@ class CommandeProduit
      * Many Commandes have One Client.
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Commande", inversedBy="commandeProduits")
-     * @ORM\JoinColumn(name="cmd_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="commande_id", referencedColumnName="id")
      */
     private $commande;
 
@@ -25,7 +25,7 @@ class CommandeProduit
      * Many Commandes have One Client.
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Produit", inversedBy="commandeProduits")
-     * @ORM\JoinColumn(name="prd_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="produit_id", referencedColumnName="id")
      */
     private $produit;
 
@@ -51,17 +51,6 @@ class CommandeProduit
      * @ORM\Column(type="datetime")
      */
     private $updated;
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set quantite

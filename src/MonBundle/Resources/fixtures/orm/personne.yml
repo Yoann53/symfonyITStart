@@ -1,0 +1,9 @@
+MonBundle\Entity\Personne:
+    personne_{1..100}:
+        civilite: '60%? Madame : Monsieur'
+        nom: <lastName()>
+        prenom: '60%? <firstNameFemale()> : <firstNameMale()>'
+        dateNaissance: <dateTime('1994-12-31')>
+        adresse: <address()>
+        codePostal: <postCode()>
+        ville: <city()>
