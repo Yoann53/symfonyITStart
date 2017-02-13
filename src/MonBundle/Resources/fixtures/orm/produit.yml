@@ -1,8 +1,8 @@
 MonBundle\Entity\Produit:
     produit_{1..100}:
         ref: <bothify('###-????')>
-        libelle: <word()>
-        description: <text()>
+        libelle: <fr_FR:word()>
+        description: <fr_FR:text()>
         prixUnitaire: <randomFloat(2)>
         quantiteStock: <numberBetween(0, 1000)>
         
