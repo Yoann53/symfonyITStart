@@ -10,4 +10,16 @@ namespace MonBundle\Repository;
  */
 class PersonneRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	public function findByDateNaissance($date)
+	{
+		$qb = $this->createQueryBuilder('personne');
+		$qb->where($qb->expr()->gte('personne.dateNaissance', ':date'))
+			->orderBy('personne.nom', 'ASC')
+			->addOrderBy('personne.prenom', 'ASC')
+			->setParameter(':date', $date);
+
+		return $qb->getQuery()->getResult();
+	}
+
 }

@@ -36,13 +36,16 @@ class DefaultController extends Controller
      */
     public function page2Action()
     {
-    	$listClients = $this->getDoctrine()->getRepository('MonBundle:Personne')->findBy(
-    		array(),
-    		array(
-    			'nom' => 'ASC',
-    			'prenom' => 'ASC'
-    		)
-    	);
+    	// $listClients = $this->getDoctrine()->getRepository('MonBundle:Personne')->findBy(
+    	// 	array(),
+    	// 	array(
+    	// 		'nom' => 'ASC',
+    	// 		'prenom' => 'ASC'
+    	// 	)
+    	// );
+        $date = new \DateTime('1990-01-01');
+        //Récupère tous les clients dont la date de naissance est supérieur à 01/01/1990
+        $listClients = $this->getDoctrine()->getRepository('MonBundle:Personne')->findByDateNaissance($date);
 
     	return $this->render('MonBundle:Default:page2.html.twig', array(
     		"personnes" => $listClients
