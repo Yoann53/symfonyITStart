@@ -2,6 +2,6 @@ MonBundle\Entity\Commande:
     commande_{1..100}:
         ref: <bothify('###-????')>
         dateExpedition: <dateTimeBetween('-3 years', '-3 days')>
-        dateCmd: <dateTimeInInterval($dateExpedition, '+ 3 days')>
+        dateCmd: <dateTimeInInterval($dateExpedition, '- 3 days')>
         client: '@client*'
         statut: '@statut*'
