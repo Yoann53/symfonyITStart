@@ -3,5 +3,10 @@
 {% block title %}MonBundle:Personne:create{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Personne:create page</h1>
+	<h1>Ajouter une nouvelle personne</h1>
+
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
+
 {% endblock %}

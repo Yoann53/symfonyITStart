@@ -22,7 +22,6 @@ class PersonneController extends Controller
     	$form = $this->createForm('MonBundle\Form\PersonneType', $pers);
 
         return $this->render('MonBundle:Personne:create.html.twig', array(
-            'personne' => $pers,
             'form' => $form->createView()
         ));
     }
