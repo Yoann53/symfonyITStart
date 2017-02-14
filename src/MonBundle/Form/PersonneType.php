@@ -27,23 +27,23 @@ class PersonneType extends AbstractType
                 'label' => "Civilité"
             ))
             ->add('nom', TextType::class, array(
-                'required' => true
+                'required' => false // mettre à true pour utiliser la validation HTML5
             ))
             ->add('prenom', TextType::class, array(
-                'required' => true
+                'required' => false
             ))
             ->add('dateNaissance', BirthdayType::class, array(
                 'years' => range(1950,2017),
                 'label' => 'Date de naissance'
             ))
             ->add('adresse', TextType::class, array(
-                'required' => true
+                'required' => false
             ))
             ->add('codePostal', TextType::class, array(
-                'required' => true
+                'required' => false
             ))
             ->add('ville', TextType::class, array(
-                'required' => true
+                'required' => false
             ))
             ->add('enregistrer', SubmitType::class);
     }

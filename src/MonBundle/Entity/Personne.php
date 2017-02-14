@@ -4,6 +4,7 @@ namespace MonBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Personne
@@ -25,13 +26,24 @@ class Personne
     /**
      * @var string
      *
+     * @Assert\NotBlank(
+     *      message = "Ce champ est obligatoire. Veuillez le renseigner."
+     * )
      * @ORM\Column(name="civilite", type="string", length=20)
      */
     private $civilite;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(
+     *      message = "Ce champ est obligatoire. Veuillez le renseigner."
+     * )
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "Le nom doit être au moins de {{ limit }} caractères !",
+     *      maxMessage = "Your first name cannot be longer than {{ limit }} caractères"
+     * )
      * @ORM\Column(name="nom", type="string", length=50)
      */
     private $nom;
@@ -39,6 +51,9 @@ class Personne
     /**
      * @var string
      *
+     * @Assert\NotBlank(
+     *      message = "Ce champ est obligatoire. Veuillez le renseigner."
+     * )
      * @ORM\Column(name="prenom", type="string", length=50)
      */
     private $prenom;
@@ -46,6 +61,9 @@ class Personne
     /**
      * @var \DateTime
      *
+     * @Assert\NotBlank(
+     *      message = "Ce champ est obligatoire. Veuillez le renseigner."
+     * )
      * @ORM\Column(name="date_naissance", type="date", nullable=true)
      */
     private $dateNaissance;
@@ -53,6 +71,9 @@ class Personne
     /**
      * @var string
      *
+     * @Assert\NotBlank(
+     *      message = "Ce champ est obligatoire. Veuillez le renseigner."
+     * )
      * @ORM\Column(name="adresse", type="string", length=255, nullable=true)
      */
     private $adresse;
@@ -60,6 +81,9 @@ class Personne
     /**
      * @var int
      *
+     * @Assert\NotBlank(
+     *      message = "Ce champ est obligatoire. Veuillez le renseigner."
+     * )
      * @ORM\Column(name="code_postal", type="integer", nullable=true)
      */
     private $codePostal;
@@ -67,6 +91,9 @@ class Personne
     /**
      * @var string
      *
+     * @Assert\NotBlank(
+     *      message = "Ce champ est obligatoire. Veuillez le renseigner."
+     * )
      * @ORM\Column(name="ville", type="string", length=150, nullable=true)
      */
     private $ville;
