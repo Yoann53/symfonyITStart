@@ -7,7 +7,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class PersonneType extends AbstractType
 {
@@ -21,7 +22,9 @@ class PersonneType extends AbstractType
                     'Monsieur' => 'Monsieur',
                     'Madame' => 'Madame'
                 ),
-                'required' => true
+                'expanded' => true,
+                'required' => true,
+                'label' => "Civilité"
             ))
             ->add('nom', TextType::class, array(
                 'required' => true
@@ -29,10 +32,9 @@ class PersonneType extends AbstractType
             ->add('prenom', TextType::class, array(
                 'required' => true
             ))
-            ->add('dateNaissance', DateType::class, array(
-                'widget' => 'single_text',
-                // this is actually the default format for single_text
-                'format' => 'yyyy-MM-dd'
+            ->add('dateNaissance', BirthdayType::class, array(
+                'years' => range(1950,2017),
+                'label' => 'Date de naissance'
             ))
             ->add('adresse', TextType::class, array(
                 'required' => true
@@ -42,7 +44,8 @@ class PersonneType extends AbstractType
             ))
             ->add('ville', TextType::class, array(
                 'required' => true
-            ));
+            ))
+            ->add('enregistrer', SubmitType::class);
     }
     
     /**
