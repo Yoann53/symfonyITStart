@@ -31,6 +31,11 @@ class PersonneController extends Controller
 
         //On vérifie que le formulaire a bien été envoyé et validé
         if($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getEntityManager();
+            //Récupère l'objet à partir duquel on a créé notre formulaire, hydraté avec les valeurs transmises en méthode POST dans notre request
+            $pers = $form->getData();
+            $em->persist($pers);
+            $em->flush();
             $message = "Le formulaire a bien été envoyé et validé !!";
         } else {
             $message = null;
