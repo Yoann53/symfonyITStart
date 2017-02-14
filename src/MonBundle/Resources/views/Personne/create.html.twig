@@ -6,8 +6,20 @@
 	<h1>Ajouter une nouvelle personne</h1>
 	{{ message }}
 
-	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	{{ form_end(form) }}
+	{{ form_start(formCli) }}
+
+	{{ form_row(formCli.personne.civilite) }}
+	{{ form_row(formCli.personne.nom) }}
+	{{ form_row(formCli.personne.prenom) }}
+	{{ form_row(formCli.personne.dateNaissance) }}
+	{{ form_row(formCli.personne.adresse) }}
+	{{ form_row(formCli.personne.codePostal) }}
+	{{ form_row(formCli.personne.ville) }}
+	{{ form_row(formCli.iban) }}
+	{{ form_row(formCli.bic) }}
+
+	{{ form_row(formCli.enregistrer) }}
+
+	{{ form_end(formCli) }}
 
 {% endblock %}

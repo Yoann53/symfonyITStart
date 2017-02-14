@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use MonBundle\Entity\Personne;
+use MonBundle\Entity\Client;
 
 /**
  * Personne controller.
@@ -19,31 +20,33 @@ class PersonneController extends Controller
      */
     public function createAction(Request $request)
     {
-    	$pers = new Personne();
+        $cli = new Client();
         //Hydrater l'objet personne pour avoir le formulaire pré-rempli
         //$pers->setNom("GAUCHARD");
-    	$form = $this->createForm('MonBundle\Form\PersonneType', $pers);
 
+        $formCli = $this->createForm('MonBundle\Form\ClientType', $cli);
         // Attention : Lorsque le formulaire est envoyé, la même action qu'il l'a affiché est à nouveau appelée.
 
         //Prise en compte de la requête POST à la soumission du formulaire
-        $form->handleRequest($request);
+        $formCli->handleRequest($request);
 
         //On vérifie que le formulaire a bien été envoyé et validé
-        if($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
+        if($formCli->isSubmitted() && $formCli->isValid()) {
+            $em = $this->getDoctrine()->getManager();
             //Récupère l'objet à partir duquel on a créé notre formulaire, hydraté avec les valeurs transmises en méthode POST dans notre request
-            $pers = $form->getData();
+            $cli = $formCli->getData();
+            $pers = $cli->getPersonne();
             $em->persist($pers);
+            $em->persist($cli);
             $em->flush();
-            $message = "Le formulaire a bien été envoyé et validé !!";
+            $message = "Votre client a bien été enregistré.";
         } else {
             $message = null;
         }
 
         return $this->render('MonBundle:Personne:create.html.twig', array(
             'message' => $message,
-            'form' => $form->createView()
+            'formCli' => $formCli->createView()
         ));
     }
 

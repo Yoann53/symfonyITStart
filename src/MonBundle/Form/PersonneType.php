@@ -27,7 +27,7 @@ class PersonneType extends AbstractType
                 'label' => "Civilité"
             ))
             ->add('nom', TextType::class, array(
-                'required' => false // mettre à true pour utiliser la validation HTML5
+                'required' => false 
             ))
             ->add('prenom', TextType::class, array(
                 'required' => false

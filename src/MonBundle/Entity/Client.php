@@ -4,6 +4,7 @@ namespace MonBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Client
@@ -53,6 +54,7 @@ class Client
     private $updated;
 
     /**
+     * @Assert\Valid()
      * One Client has One Personne.
      * @ORM\OneToOne(targetEntity="Personne")
      * @ORM\JoinColumn(name="id", referencedColumnName="id", onDelete="CASCADE")
