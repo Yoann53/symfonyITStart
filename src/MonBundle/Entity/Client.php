@@ -32,7 +32,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="iban", type="string", length=25, nullable=true)
+     * @ORM\Column(name="iban", type="string", length=50, nullable=true)
      */
     private $iban;
 

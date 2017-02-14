@@ -84,7 +84,7 @@ class Personne
      * @Assert\NotBlank(
      *      message = "Ce champ est obligatoire. Veuillez le renseigner."
      * )
-     * @ORM\Column(name="code_postal", type="integer", nullable=true)
+     * @ORM\Column(name="code_postal", type="string", length=9, nullable=true)
      */
     private $codePostal;
 
